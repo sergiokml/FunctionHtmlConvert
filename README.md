@@ -24,7 +24,17 @@
 </p>
 <br />
 
-Function Azure that allows to convert an XML file to an HTML file following the standards for electronic invoices set by [Servicio de Impuestos Internos](https://www.sii.cl/). Transforms the node "TED" to a barcode Pdf417 and embeds it in the result as base64 image then, transforms the content via an XLST template provided in this repository.
+Function Azure that allows to convert an XML file to an HTML file following the standards for electronic invoices set by [Servicio de Impuestos Internos](https://www.sii.cl/). 
+<p align="center">
+  <a href="" target="_blank">
+    <img width="60%" src="https://user-images.githubusercontent.com/6364350/227446074-04a5c5b2-c7c1-4b3f-84a5-4077b11c969b.png" alt="Pdf417">
+  </a>
+</p>
+
+
+
+
+Transforms the node "TED" to a barcode Pdf417 and embeds it in the result as base64 image then, transforms the content via an XLST template. The template is hosted in an Azure storage blob container.
 
 The resulting file is content ready to convert to PDF in browser.
 
@@ -39,21 +49,14 @@ The resulting file is content ready to convert to PDF in browser.
     </tr>    
     <tr>   
       <td style="text-align: left;">Azure Funtions 4.1.1</td>      
-    </tr>
-    <tr>   
-      <td style="text-align: left;">Sdk Graph 5.2.0</td>      
-    </tr>
-    <tr>   
-      <td style="text-align: left;">Azure Identity 1.8.2</td>      
-    </tr>
+    </tr>   
   </tbody>
 </table>
 
 
 ### ✅&nbsp; Requirements
 
-+ A subscription account [Office365](https://developer.microsoft.com/en-us/microsoft-365/dev-program).
-+ Register an Application in Azure AD & assign permissions.
++ Template Xsl/Xslt. ([XslCompiledTransform Class](https://learn.microsoft.com/en-us/dotnet/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly))
 
 
 ### 🚀&nbsp; Usage
