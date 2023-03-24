@@ -13,19 +13,19 @@ using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace FuncHtmlConvert
 {
-    internal class ConvertToPdf
+    internal class ConvertToHtml
     {
         private readonly BlobContainerService blobContainer;
 
-        public ConvertToPdf(IConfiguration configuration, BlobContainerService blobContainer)
+        public ConvertToHtml(IConfiguration configuration, BlobContainerService blobContainer)
         {
             this.blobContainer = blobContainer;
             _ = configuration.GetValue<string>("AzureWebJobsStorage");
         }
 
-        [FunctionName("ConvertToPdf")]
+        [FunctionName("convert")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = "convert")]
                 HttpRequest req,
             ILogger log
         )
@@ -40,9 +40,9 @@ namespace FuncHtmlConvert
                 string requestBody = body.ReadToEnd();
                 string htmlContent = xsltservice.GenerateHtml(requestBody);
 
-                var htmlToPdf = new NReco.PdfGenerator.HtmlToPdfConverter();
-                var pdfBytes = htmlToPdf.GeneratePdf(htmlContent);
-                return new FileContentResult(pdfBytes, "application/pdf");
+                //var htmlToPdf = new NReco.PdfGenerator.HtmlToPdfConverter();
+                //var pdfBytes = htmlToPdf.GeneratePdf(htmlContent);
+                return new OkObjectResult(htmlContent);
             }
             catch (System.Exception)
             {
