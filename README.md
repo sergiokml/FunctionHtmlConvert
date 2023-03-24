@@ -76,6 +76,16 @@ Curl:
 curl --location 'http://localhost:30374/api/convert' --header 'Content-Type: application/xml' --data '@/C:/Users/.../file.xml'
 ```
 
+```json
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "ADConfig:Container": "mappers", // for conainer folder
+    "ADConfig:Template": "template_DTE.xslt" // template name
+  }
+```
+
+
 
 ### 📫&nbsp; Have a question? Found a Bug? 
 
