@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "FuncHtmlConvert": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7161"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30374,
+      "useSSL": false
+    }
+  }
+}
