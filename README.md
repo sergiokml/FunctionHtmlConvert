@@ -43,13 +43,16 @@ The resulting file is content ready to convert to PDF in browser.
 <table>
   <thead>
   </thead>
-  <tbody>
-    <tr>    
-      <td style="text-align: left;">Framework .Net 6.0</td>      
-    </tr>    
+  <tbody>     
     <tr>   
       <td style="text-align: left;">Azure Funtions 4.1.1</td>      
     </tr>   
+      <tr>   
+      <td style="text-align: left;">ZXing.Net 0.16.9</td>      
+    </tr> 
+         <tr>   
+      <td style="text-align: left;">ZXing.Net Drawing 0.16.5-beta</td>      
+    </tr> 
   </tbody>
 </table>
 
