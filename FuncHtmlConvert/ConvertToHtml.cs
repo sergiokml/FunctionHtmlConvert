@@ -25,8 +25,7 @@ namespace FuncHtmlConvert
 
         [FunctionName("convert")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = "convert")]
-                HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "convert")] HttpRequest req,
             ILogger log
         )
         {

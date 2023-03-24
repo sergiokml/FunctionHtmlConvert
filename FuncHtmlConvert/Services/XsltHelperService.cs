@@ -89,6 +89,8 @@ namespace FuncHtmlConvert.Services
             }
             catch (Exception)
             {
+                // INSTALL IN LINUX IN CASE ERRORS!
+                // apt-get install libgdiplus
                 throw;
             }
         }

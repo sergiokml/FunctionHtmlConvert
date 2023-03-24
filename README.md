@@ -27,14 +27,14 @@
 Function Azure that allows to convert an XML file to an HTML file following the standards for electronic invoices set by [Servicio de Impuestos Internos](https://www.sii.cl/). 
 <p align="center">
   <a href="" target="_blank">
-    <img width="60%" src="https://user-images.githubusercontent.com/6364350/227446074-04a5c5b2-c7c1-4b3f-84a5-4077b11c969b.png" alt="Pdf417">
+    <img width="30%" src="https://user-images.githubusercontent.com/6364350/227446074-04a5c5b2-c7c1-4b3f-84a5-4077b11c969b.png" alt="Pdf417">
   </a>
 </p>
 
 
 
 
-Transforms the node "TED" to a barcode Pdf417 and embeds it in the result as base64 image then, transforms the content via an XLST template. The template is hosted in an Azure storage blob container.
+Transforms the node "TED" to a barcode PDF417 and embeds it in the result as base64 image then, transforms the content via an XLST template. The file template must be hosted in an Azure storage blob container for consume.
 
 The resulting file is content ready to convert to PDF in browser.
 
@@ -53,18 +53,28 @@ The resulting file is content ready to convert to PDF in browser.
          <tr>   
       <td style="text-align: left;">ZXing.Net Drawing 0.16.5-beta</td>      
     </tr> 
+    </tr> 
+         <tr>   
+      <td style="text-align: left;">Include support Docker</td>      
+    </tr> 
   </tbody>
 </table>
 
 
 ### ✅&nbsp; Requirements
 
-+ Template Xsl/Xslt. ([XslCompiledTransform Class](https://learn.microsoft.com/en-us/dotnet/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly))
++ File template in format XSL/XSLT. ([XslCompiledTransform Class](https://learn.microsoft.com/en-us/dotnet/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly))
++ DTE Document node.
 
 
 ### 🚀&nbsp; Usage
 
-This function can be hosted on a server and called from a POST request, upload the file and wait for the result in HTML content.
+This function can be hosted on a server and called from a POST request, upload the file and wait for the result in HTML content. You need config the Blob Container for host the template.
+
+Curl: 
+```
+curl --location 'http://localhost:30374/api/convert' --header 'Content-Type: application/xml' --data '@/C:/Users/.../file.xml'
+```
 
 
 ### 📫&nbsp; Have a question? Found a Bug? 
