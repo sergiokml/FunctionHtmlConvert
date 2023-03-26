@@ -52,11 +52,7 @@ The resulting file is content ready to convert to PDF in browser.
     </tr> 
          <tr>   
       <td style="text-align: left;">ZXing.Net Drawing 0.16.5-beta</td>      
-    </tr> 
-    </tr> 
-         <tr>   
-      <td style="text-align: left;">Include support Docker</td>      
-    </tr> 
+    </tr>     
   </tbody>
 </table>
 
