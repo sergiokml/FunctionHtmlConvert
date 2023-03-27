@@ -82,7 +82,7 @@ curl --location 'http://localhost:30374/api/convert' --header 'Content-Type: app
 ```
 ![image](https://user-images.githubusercontent.com/6364350/228015935-4ac06dcc-e632-471b-857d-52565ed9f797.png)
 
-If the templates not exists into *Blob Container* you mat use template from "Resources" proyect.
+If the templates not exists into *Blob Container* you may use template from "Resources" proyect.
 
 
 ### 📫&nbsp; Have a question? Found a Bug? 
