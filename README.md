@@ -76,8 +76,8 @@ curl --location 'http://localhost:30374/api/convert' --header 'Content-Type: app
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "ADConfig:Container": "mappers", // Blob Container name
-    "ADConfig:Template": "template_DTE.xslt" // template name
+    "ADConfig:Container": "templates-xslt", // Blob Container name
+    "ADConfig:Template": "dte_fromat.sxl" // template name
   }
 ```
 ![image](https://user-images.githubusercontent.com/6364350/228015935-4ac06dcc-e632-471b-857d-52565ed9f797.png)
