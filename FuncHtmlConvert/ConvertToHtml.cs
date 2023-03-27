@@ -34,7 +34,7 @@ namespace FuncHtmlConvert
                 CloudBlockBlob blob = await blobContainer.LoadBlobAsync();
                 byte[] bytes = new byte[blob.Properties.Length];
                 _ = await blob.DownloadToByteArrayAsync(bytes, 0);
-                XsltHelperService xsltservice = new(bytes);
+                XsltHelperService xsltservice = new();
                 StreamReader body = new(req.Body);
                 string requestBody = body.ReadToEnd();
                 string htmlContent = xsltservice.GenerateHtml(requestBody);

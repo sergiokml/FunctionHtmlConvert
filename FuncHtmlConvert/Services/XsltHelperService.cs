@@ -50,6 +50,17 @@ namespace FuncHtmlConvert.Services
             SetBarCode();
         }
 
+        public XsltHelperService()
+        {
+            xlstFile = new XslCompiledTransform();
+            xlstArgs = new XsltArgumentList();
+            using StringReader sr = new(Properties.Resources.dte_format);
+            XmlReaderSettings settings = new() { Async = true };
+            using XmlReader xr = XmlReader.Create(sr, settings);
+            xlstFile.Load(xr);
+            SetBarCode();
+        }
+
         private static string GetNode(string inputXml)
         {
             XDocument t = XDocument.Parse(inputXml, LoadOptions.None);
