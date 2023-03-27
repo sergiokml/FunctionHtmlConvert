@@ -29,16 +29,25 @@ namespace FuncHtmlConvert
             ILogger log
         )
         {
+            string htmlContent;
             try
             {
-                CloudBlockBlob blob = await blobContainer.LoadBlobAsync();
-                byte[] bytes = new byte[blob.Properties.Length];
-                _ = await blob.DownloadToByteArrayAsync(bytes, 0);
-                XsltHelperService xsltservice = new();
                 StreamReader body = new(req.Body);
-                string requestBody = body.ReadToEnd();
-                string htmlContent = xsltservice.GenerateHtml(requestBody);
-
+                CloudBlockBlob blob = await blobContainer.LoadBlobAsync();
+                if (blob != null)
+                {
+                    byte[] bytes = new byte[blob.Properties.Length];
+                    _ = await blob.DownloadToByteArrayAsync(bytes, 0);
+                    XsltHelperService xsltservice = new(bytes);
+                    string requestBody = body.ReadToEnd();
+                    htmlContent = xsltservice.GenerateHtml(requestBody);
+                }
+                else
+                {
+                    string requestBody = body.ReadToEnd();
+                    XsltHelperService xsltservice = new();
+                    htmlContent = xsltservice.GenerateHtml(requestBody);
+                }
                 //var htmlToPdf = new NReco.PdfGenerator.HtmlToPdfConverter();
                 //var pdfBytes = htmlToPdf.GeneratePdf(htmlContent);
                 return new OkObjectResult(htmlContent);
